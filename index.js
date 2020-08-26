@@ -282,7 +282,7 @@ port.on('open', () => {
                         // }
                         case 0x61: { // 0x61 nn nn // Wait n samples
                             let n = file.Data.slice(offset, offset + 3)
-                                .readInt32LE(1, 2)
+                                .readIntLE(1, 2)
                             wait = n / 44100 * 1000
                             offset += 3
                             break
